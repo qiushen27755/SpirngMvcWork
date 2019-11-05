@@ -7,7 +7,6 @@ import java.util.Map;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
 
-import org.jboss.logging.Message;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;

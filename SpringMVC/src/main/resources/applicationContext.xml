@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- id 随便起  class 指向对应的类 -->
+    <bean id="hello" class="com.helen.ioc.pojo.Hello">  
+	<!-- 配置一个属性 -->
+		<property name="str" value="邱仕隆" />
+    </bean>
+ 	
+ 	<!-- 引用一下原型IOC , 定义有SpirngIOC创建的对象-->
+	<bean id="p1" class="pers.helen.ioc.UserDAOImpl"/>
+	<bean id="p2" class="pers.helen.ioc.UserDAOMysql"/>
+	<bean id="p3" class="pers.helen.ioc.UserDAOOracle"/>
+	
+	<bean id="service" class="pers.helen.ioc.service.UserServiceImpl">
+		<!-- ref:引用Spring容器创建好的对象
+			 value: 具体的值  -->
+		<property name="userDao" ref="p3"/>
+ 	</bean>
+</beans>
